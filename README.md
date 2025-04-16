@@ -6,7 +6,6 @@ This is a Sticky Notes app built using Electron and React. It's designed to prov
 
 - Multiple sticky notes can be created and managed.
 - Sticky notes are draggable, so you can move them around your screen.
-- Simple, intuitive design inspired by Microsoft's Sticky Notes app.
 
 ## Table of Contents
 - [Installation](#installation)
