@@ -36,7 +36,8 @@
     "css-loader": "^6.11.0",
     "electron": "35.1.5",
     "node-loader": "^2.1.0",
-    "style-loader": "^3.3.4"
+    "style-loader": "^3.3.4",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "electron-auto-launch": "^5.0.7",
