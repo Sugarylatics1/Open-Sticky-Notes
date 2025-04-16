@@ -1,0 +1,89 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ebead7;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Entire app wrapper */
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ebead7;
+  position: relative;
+}
+
+/* Draggable top bar */
+.top-bar {
+  height: 30px;
+  width: 100%;
+  -webkit-app-region: drag;
+  background-color: transparent;
+  position: relative;
+}
+
+/* Exit button at top-right */
+.exit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  z-index: 10;
+}
+
+.exit-button:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Main text area */
+.note-textarea {
+  width: 100%;
+  height: 100%; /* leave space for top bar */
+  padding: 2px 20px 20px 20px;
+  font-size: 16px;
+  border: none;
+  resize: none;
+  outline: none;
+  background: transparent;
+  box-sizing: border-box;
+  -webkit-app-region: no-drag;
+}
+
+.new-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  z-index: 10;
+}
+
+.new-button:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.05);
+}
