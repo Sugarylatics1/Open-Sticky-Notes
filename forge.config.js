@@ -12,7 +12,7 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         name: 'my_sticky_notes',
-        setupIcon: './public/icon.ico',
+        setupIcon: './public/tray.ico',
         shortcutName: 'My Sticky Notes',
         setupExe: 'MyStickyNotesInstaller.exe',
         // Optional:
