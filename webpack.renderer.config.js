@@ -8,7 +8,7 @@ rules.push({
 });
 
 module.exports = {
-  // Put your normal webpack config below here
+  
   module: {
     rules: [
       {
@@ -18,7 +18,7 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
-      // add CSS loader if needed
+      
       
       {
         test: /\.css$/,
@@ -28,7 +28,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'] // ← important!
+    extensions: ['.js', '.jsx'] 
   },
   plugins: [
       new CopyWebpackPlugin({

@@ -7,7 +7,7 @@ module.exports = {
     asar: true,
     icon: path.resolve(__dirname, 'public/tray'),
     extraResource: [
-      path.resolve(__dirname, 'resources/assets'), // Include the assets directory
+      path.resolve(__dirname, 'resources/assets'), 
     ],
   },
   rebuildConfig: {},
@@ -19,7 +19,6 @@ module.exports = {
         setupIcon: path.resolve(__dirname, 'public/tray.ico'),
         shortcutName: 'My Sticky Notes',
         setupExe: 'MyStickyNotesInstaller.exe',
-        // Optional:
         shortcutFolderName: 'My Sticky Notes',
         noMsi: true,
       },
@@ -61,8 +60,7 @@ module.exports = {
         },
       },
     },
-    // Fuses are used to enable/disable various Electron functionality
-    // at package time, before code signing the application
+    
     new FusesPlugin({
       version: FuseVersion.V1,
       [FuseV1Options.RunAsNode]: false,

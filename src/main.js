@@ -9,17 +9,17 @@ let noteWindows = [];
 const NOTE_PATH = path.join(app.getPath('userData'), 'note.json');
 
 const autoLauncher = new AutoLaunch({
-  name: 'My Sticky Notes', // You can match your actual app name here
+  name: 'My Sticky Notes', 
   path: process.execPath,
 });
 
-// 🔁 Sync tray checkbox with system setting
+
 async function syncAutoLaunchCheckbox(menuItem) {
   const isEnabled = await autoLauncher.isEnabled();
   menuItem.checked = isEnabled;
 }
 
-// 📒 Create new note window
+
 function createNoteWindow(x = 100, y = 100) {
   const win = new BrowserWindow({
     width: 300,
@@ -46,10 +46,10 @@ function createNoteWindow(x = 100, y = 100) {
 app.whenReady().then(async () => {
   createNoteWindow();
 
-  // Use app.isPackaged to determine the correct path for the tray icon
+  
   const trayIconPath = app.isPackaged
-    ? path.join(process.resourcesPath, 'assets', 'tray.png') // Packaged app path
-    : path.join(__dirname, '../assets/tray.png'); // Development path
+    ? path.join(process.resourcesPath, 'assets', 'tray.png') 
+    : path.join(__dirname, '../assets/tray.png'); 
 
   tray = new Tray(trayIconPath);
 
@@ -70,14 +70,14 @@ app.whenReady().then(async () => {
     { label: 'Quit', click: () => app.quit() },
   ]);
 
-  // Sync the checkbox state with current setting
+  
   await syncAutoLaunchCheckbox(contextMenu.items.find(i => i.label === 'Start on Boot'));
 
   tray.setToolTip('Sticky Notes');
   tray.setContextMenu(contextMenu);
 });
 
-// IPC handlers
+
 ipcMain.handle('load-note', async () => {
   try {
     if (fs.existsSync(NOTE_PATH)) {
