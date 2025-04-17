@@ -16,7 +16,11 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'assets/tray.png'),
-          to: path.resolve(__dirname, '.webpack/main/assets/'),
+          to: path.resolve(__dirname, '.webpack/assets/'),
+        },
+        {
+          from: path.resolve(__dirname, 'assets/tray.png'), // Source tray icon
+          to: path.resolve(__dirname, 'resources/assets/'), // For production
         },
       ],
     }),

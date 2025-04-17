@@ -46,7 +46,12 @@ function createNoteWindow(x = 100, y = 100) {
 app.whenReady().then(async () => {
   createNoteWindow();
 
-  tray = new Tray(path.resolve(__dirname, '../assets/tray.png')); // Use path.resolve
+  // Use app.isPackaged to determine the correct path for the tray icon
+  const trayIconPath = app.isPackaged
+    ? path.join(process.resourcesPath, 'assets', 'tray.png') // Packaged app path
+    : path.join(__dirname, '../assets/tray.png'); // Development path
+
+  tray = new Tray(trayIconPath);
 
   const contextMenu = Menu.buildFromTemplate([
     { label: 'New Note', click: () => createNoteWindow() },
