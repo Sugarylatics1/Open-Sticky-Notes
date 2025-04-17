@@ -1,10 +1,14 @@
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
+const path = require('path');
 
 module.exports = {
   packagerConfig: {
     asar: true,
-    icon: './public/icon',
+    icon: path.resolve(__dirname, 'public/tray'),
+    extraResource: [
+      path.resolve(__dirname, 'resources/assets'), // Include the assets directory
+    ],
   },
   rebuildConfig: {},
   makers: [
@@ -12,7 +16,7 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         name: 'my_sticky_notes',
-        setupIcon: './public/icon.ico',
+        setupIcon: path.resolve(__dirname, 'public/tray.ico'),
         shortcutName: 'My Sticky Notes',
         setupExe: 'MyStickyNotesInstaller.exe',
         // Optional:
